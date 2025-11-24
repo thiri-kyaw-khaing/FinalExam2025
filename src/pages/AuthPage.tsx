@@ -4,7 +4,7 @@ import {
   signUpWithEmailAndPassword,
   sendPasswordResetEmail,
   type FirebaseAuthCredentials,
-} from "../lib/fakeFirebase";
+} from "../lib/Firebase";
 import type { User } from "../types";
 import { createUser } from "../lib/mockApi";
 

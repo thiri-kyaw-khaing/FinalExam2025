@@ -5,7 +5,7 @@ import {
   getCurrentAuthUser,
   seedDemoAccounts,
   signOut as firebaseSignOut,
-} from "./lib/fakeFirebase";
+} from "./lib/Firebase";
 import { AuthPage } from "./pages/AuthPage";
 import { Dashboard } from "./pages/Dashboard";
 import { TeacherSchedule } from "./pages/TeacherSchedule";

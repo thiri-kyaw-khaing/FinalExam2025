@@ -138,9 +138,9 @@ export async function signUpWithEmailAndPassword(
   localStorage.setItem(STORAGE_KEYS.AUTH_TOKEN, token);
 
   const publicUser = mapToPublicUser(newUser);
-  const authData = { 
-    user: publicUser, 
-    role: newUser.role 
+  const authData = {
+    user: publicUser,
+    role: newUser.role,
   };
   localStorage.setItem(
     STORAGE_KEYS.CURRENT_AUTH_USER,
@@ -184,9 +184,9 @@ export async function signInWithEmailAndPassword(
   localStorage.setItem(STORAGE_KEYS.AUTH_TOKEN, token);
 
   const publicUser = mapToPublicUser(user);
-  const authData = { 
-    user: publicUser, 
-    role: user.role 
+  const authData = {
+    user: publicUser,
+    role: user.role,
   };
   localStorage.setItem(
     STORAGE_KEYS.CURRENT_AUTH_USER,
@@ -223,9 +223,9 @@ export function getCurrentAuthUser(): {
   try {
     const data = localStorage.getItem(STORAGE_KEYS.CURRENT_AUTH_USER);
     if (!data) return null;
-    
+
     const parsed = JSON.parse(data);
-    
+
     // Validate the structure
     if (!parsed || !parsed.user || !parsed.user.uid || !parsed.role) {
       console.warn("⚠️ Invalid auth data found, clearing...");
@@ -233,7 +233,7 @@ export function getCurrentAuthUser(): {
       localStorage.removeItem(STORAGE_KEYS.AUTH_TOKEN);
       return null;
     }
-    
+
     return parsed;
   } catch (error) {
     console.error("❌ Error reading auth user:", error);
